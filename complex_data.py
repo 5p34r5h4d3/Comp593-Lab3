@@ -24,19 +24,19 @@ def main():
     new_movie = {'title': 'Black Panther','genre' : 'Action, Science Fiction,Superhero'}
     student_info['movies'].append(new_movie)
 
-    new_toppings = {'Sausage', 'Mushroom','Bacon'}
+    new_toppings = ('SAUSAGE', 'Mushroom', 'Bacon')
     add_pizza_to_info(student_info, new_toppings)
-
+    
     print_student_info(student_info)
-    print_pizza(student_info)
+    print_pizza(student_info)   
 
 def add_pizza_to_info(info, new_toppings):
 
     info['pizza_toppings'].extend(new_toppings)
 
     for i,p in enumerate(info['pizza_toppings']):
-       info['pizza_toppings'][i] = p.islower()
-       
+        info['pizza_toppings'][i] = p.lower()
+    
     info['pizza_toppings'].sort()
     
 def print_student_info(info):

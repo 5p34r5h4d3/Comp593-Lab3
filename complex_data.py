@@ -1,3 +1,6 @@
+import enum
+
+
 def main():
 
     student_info = {
@@ -10,18 +13,18 @@ def main():
         ],
         'movies': [
             {
-                'title':'Batman: The Dark Knight',
-                'genre':'Action, Superhero'
+                'title':'batman: the dark knight',
+                'genre':'Action'           
             },
             {
-               'title':'Spiderman No Way Home',
-               'genre':'Action, Superhero' 
+               'title':'spiderman no way home',
+               'genre':'Superhero' 
             }
 
          ]
     }
     
-    new_movie = {'title': 'Black Panther','genre' : 'Action, Science Fiction,Superhero'}
+    new_movie = {'title': 'black panther','genre' : 'Science-Fiction'}
     student_info['movies'].append(new_movie)
 
     new_toppings = ('SAUSAGE', 'Mushroom', 'Bacon')
@@ -29,6 +32,8 @@ def main():
     
     print_student_info(student_info)
     print_pizza(student_info)   
+    print_sentence(student_info)
+    print_sentence2(student_info)
 
 def add_pizza_to_info(info, new_toppings):
 
@@ -49,8 +54,30 @@ def print_pizza(info):
     print(header)
     print('-' * len(header))
 
+    
     for p in info['pizza_toppings']:
         print(f"- {p}")
     print()
+
+def print_sentence(info):
+        
+    print(f"I like to watch ", end='')
+    movie_genre = ''
+    for g in info['movies']:
+        movie_genre += g['genre'] + ', '
+    movie_genre.rfind(", ")
+    print(movie_genre[:-2], end=' Movies.\n\n')
+
+def print_sentence2(info):
+    
+   print(f"Some of my favourite movies are", end=' ')
+   movie_title = ''
+   for g in info['movies']:
+       movie_title += g['title'].title() + ', '
+   print(movie_title[:-2], end='!\n\n')
+
+
+
+    
 
 main()

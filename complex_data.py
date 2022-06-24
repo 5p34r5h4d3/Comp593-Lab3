@@ -65,8 +65,8 @@ def print_sentence(info):
     movie_genre = ''
     for g in info['movies']:
         movie_genre += g['genre'] + ', '
-    movie_genre.rfind(", ")
-    print(movie_genre[:-2], end=' Movies.\n\n')
+    print(movie_genre[:-17] + ' and ' + movie_genre[-17:] ,end=' Movies.\n\n')
+    
 
 def print_sentence2(info):
     
